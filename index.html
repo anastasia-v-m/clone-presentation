@@ -1,0 +1,199 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/sky.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+          <h3>
+            <a href="https://netflix-clone-rss.netlify.app/">Netflix-clone</a>
+          </h3>
+          <p>
+            Привет! Наша команда разработчиков в составе <a href="https://github.com/Divakotova">Дарьи</a>, <a href="https://github.com/Arxons">Стаса</a> и <a href="https://github.com/anastasia-v-m">Анастасии</a> под руководством <a href="https://github.com/DimaKacer">Дмитрия</a> выполняла разработку клона приложения <a href="https://www.netflix.com/by-ru/">Netflix</a>.
+          </p>
+        </section>
+				<section>
+          <h6>Ведение задач</h6>
+          <p>
+            За основу мы брали исходные страницы netflix.com, стараясь соблюсти исходные стили и функциональность, делали свое приложение. 
+          </p>
+          <p>
+            Для ведения задач использовали доски в Trello. Одна задача могла состоять из одной страницы исходного приложения, либо из одной или нескольких функций со страницы исходного приложения, а также из работ по настройке среды, поиска данных и т.п.
+          </p>
+          <p>
+            Задачи задавались в рамках недельного спринта.
+          </p>
+        </section>
+        <section>
+          <h6>Стек технологий</h6>
+          <ul>
+            <li>TypeScript</li>
+            <li>React</li>
+            <li>Redux</li>
+            <li>REST API</li>
+            <li>SASS</li>
+          </ul>
+        </section>
+        <section>
+          <h6>Наигация</h6>
+          <p>
+            Навигация осуществляется с помощью библиотеки react-router-dom.
+          </p>
+          <img src="./examples/assets/navigation.JPG" alt="password tests">
+        </section>
+        <section>
+          <h6>Регистрация, авторизация, аутентификация</h6>
+          <p>
+            Регистрация, авторизация и аутентификация реализованы через сторонний API: https://nestjs-boilerplate-test.herokuapp.com/api
+          </p>
+          <p>
+            API подключили с помощью библиотеки axios
+          </p>
+          <img src="./examples/assets/apiRequest.JPG" alt="requests" height="130px">
+        </section>
+        <section>
+          <h6>Пароль</h6>
+          <p>
+            Реализована проверка пароля: он не должен специальных символов и пробелов, должен включать буквы латинского алфавита и быть не короче 6 и не длиннее 60 символов.
+          </p>
+          <img src="./examples/assets/passwordTests.JPG" alt="password tests" height="200px">
+          <p>
+            Данные пользователя хранятся в Session storage.
+          </p>
+        </section>
+        <section>
+          <h6>Подбор контента</h6>
+          <p>
+            К сожалению, netflix.com не предоставляет свой API в свободном доступе. Поэтому для получения данных о контенте мы использовали сторонний API: https://api.themoviedb.org/3. Для работы с API также использовали библиотеку axios.
+          </p>
+        </section>
+        <section>
+          <h6>Подбор контента</h6>
+          <p>
+            Для подбора фильмов или сериалов реализованы несколько способов:
+          </p>
+          <ul>
+            <li>по ключевому слову</li>
+            <li>по категориям - фильмы, сериал, наивысший рейтинг</li>
+            <li>по языку оригинала</li>
+          </ul>
+          <img src="./examples/assets/selections.JPG" alt="content selection" height="300px" width="550px">
+        </section>
+        <section>
+          <h6>Подбор контента</h6>
+          <p>
+            Передаем ключевые слова в качестве параметра в запрос
+          </p>
+          <img src="./examples/assets/apiController.JPG" alt="api controller">
+          <img src="./examples/assets/keyWordSearch.JPG" alt="search">
+        </section>
+        <section>
+          <h6>Подбор контента</h6>
+          <p>
+            Для выбора категории используются кнопки. При нажатии формируется URL для запроса.
+          </p>
+          <img src="./examples/assets/catBtnSwitch.JPG" alt="category switch">
+        </section>
+        <section>
+          <h6>Подбор контента</h6>
+          <p>
+            Для выбора языка оригинала используется выпадающий список. При выборе того или иного значения формируется объект с параметрами запроса.
+          </p>
+          <img src="./examples/assets/languageSwitch.JPG" alt="lang switch">
+        </section>
+        <section>
+          <h6>Контент</h6>
+          <p>
+            Общий результат отбора фильмов или сериалов представлен в виде плиток с постерами и названиями. При клике на плитку осуществляется переход на детальную страницу.
+          </p>
+          <img src="./examples/assets/commonContent.JPG" alt="content" height="300px" width="420px">
+        </section>
+        <section>
+          <h6>Контент</h6>
+          <p>
+            На детальной странице отображается информация о фильме, создателях и актерах, реализован просмотр трейлера из youtube через iframe.
+          </p>
+          <img src="./examples/assets/trailers.JPG" alt="trailers" height="400px" width="500px">
+        </section>
+        <section>
+          <h6>Контент</h6>
+          <p>
+            Если ответ возвращается с ошибкой, осуществляется переход на соответствующую страницу.
+          </p>
+          <img src="./examples/assets/page404.JPG" alt="error" height="400px" width="500px">
+        </section>
+        <section>
+          <h6>Контент</h6>
+          <p>
+            Реализовано переключение языков RU-EN через использование context
+          </p>
+          <code>
+            <pre>export const AppContext = createContext({} as IAppContextType);</pre>
+          </code>
+          <img src="./examples/assets/appProvider.JPG" alt="context" height="200px" width="650px">
+        </section>
+        <section>
+          <h6>Контент</h6>
+          <p>
+            Для контроля за состояния пользователя (log in/log out) используется redux.
+          </p>
+          <img src="./examples/assets/redux.JPG" alt="redux" height="400px" width="750px">
+        </section>
+        <section>
+          <h6>Стили</h6>
+          <p>
+            Пример использования SASS.
+          </p>
+          <img src="./examples/assets/sass.JPG" alt="redux" height="350px" width="350px">
+        </section>
+        <section>
+          <h6>Стили</h6>
+          <p>
+            Пример анимации, реализованной через keyframes.
+          </p>
+          <img src="./examples/assets/keyframes.JPG" alt="redux" height="200px" width="650px">
+        </section>
+        <section>
+          <h3>Заключение</h3>
+          <p>
+            В заключении хотелось бы отметить, что несмотря на то, что наше приложение не получилось полностью в том виде, в котором мы хотели его видеть, мы приобрели очень важный опыт:
+            <ul>
+              <li>работа в команде, взаимодействие</li>
+              <li>декомпозиция задания с разбивкой на более мелкие задачам</li>
+              <li>работа в новом фреймворке</li>
+              <li>использование инструментов планирования</li>
+            </ul>
+          </p>
+        </section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
